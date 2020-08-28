@@ -4,7 +4,7 @@ A MongoDB Atlas - Spring Boot based web service for employees management.
 ## Prequisites
 
   1. [Have an Atlas account](https://docs.atlas.mongodb.com/tutorial/create-atlas-account/)
-  2. [ Download Ppostman](https://www.postman.com/downloads/)
+  2. [ Download Postman](https://www.postman.com/downloads/)
 
 
  ## Usage
