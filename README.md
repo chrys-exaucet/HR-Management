@@ -1,5 +1,5 @@
 # HR Stakeout
-Human ressources management-System leveraged by A MongoDB Atlas - Spring Boot.
+Human ressources management system leveraged by  Spring Boot, Atlas and RabbitMQ.
 
 ## Prequisites
 
