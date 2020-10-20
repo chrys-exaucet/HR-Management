@@ -12,7 +12,7 @@ Human ressources management system leveraged by  Spring Boot, Atlas and RabbitMQ
  1.  Connect your Atlas cluster to Springboot
  Follow instructions [here](https://docs.atlas.mongodb.com/connect-to-cluster/)
  Make sure you change the  [application.properties](https://github.com/chrys-exaucet/Human-Ressources-Management-System/blob/master/src/main/resources/application.properties) file accordingly. 
- Also, remember allowing your [Whitelist](https://docs.atlas.mongodb.com/connect-to-cluster/#whitelist) cluster to discover the IP address from which you send requests.
+ Also, remember allowing your [whitelist](https://docs.atlas.mongodb.com/connect-to-cluster/#whitelist) cluster to discover the IP address from which you send requests.
  
  2. Use Postman to verify your HTTP CRUD requests.
  
