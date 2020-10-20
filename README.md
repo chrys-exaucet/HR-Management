@@ -16,6 +16,6 @@ Human ressources management-System leveraged by A MongoDB Atlas - Spring Boot.
  
  2. Use Postman to verify your HTTP CRUD requests.
  
- TODO:  add the angular front-end side to the app.
+ You sense that we should add a stunning front-end side to the app? I do too. :-)
  
- `Any trouble or insight? Feel free to open an issue.`
+ `Feel free to open an issue or send a pull request.`
