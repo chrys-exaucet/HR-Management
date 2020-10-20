@@ -1,5 +1,5 @@
-# Human-Ressources-Management-System
-A MongoDB Atlas - Spring Boot based web service for employees management.
+# HR Stakeout
+Human ressources management-System leveraged by A MongoDB Atlas - Spring Boot.
 
 ## Prequisites
 
@@ -15,6 +15,7 @@ A MongoDB Atlas - Spring Boot based web service for employees management.
  Also, remember allowing your [Whitelist](https://docs.atlas.mongodb.com/connect-to-cluster/#whitelist) cluster to discover the IP address from which you send requests.
  
  2. Use Postman to verify your HTTP CRUD requests.
- You can easy add a front-end  side to the app.
  
-    Any trouble or insight? Feel free to open an issue.
+ TODO:  add the angular front-end side to the app.
+ 
+ `Any trouble or insight? Feel free to open an issue.`
