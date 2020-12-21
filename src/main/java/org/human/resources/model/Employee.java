@@ -1,6 +1,8 @@
 package org.human.resources.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
@@ -15,6 +17,8 @@ import javax.validation.constraints.Size;
 @Document(collection = "employee")
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
 
     @Id
