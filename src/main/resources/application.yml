@@ -1,0 +1,8 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    mongodb:
+      uri: mongodb+srv://chrys:eTvlwfU5izZ5VCkj?@cluster0.swbai.mongodb.net/hr?retryWrites=true&w=majority
+
+
