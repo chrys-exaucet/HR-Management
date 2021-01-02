@@ -3,6 +3,19 @@ spring:
     allow-bean-definition-overriding: true
   data:
     mongodb:
-      uri: mongodb+srv://chrys:eTvlwfU5izZ5VCkj?@cluster0.swbai.mongodb.net/hr?retryWrites=true&w=majority
+      uri: mongodb+srv://chrys:mypassword@cluster0.swbai.mongodb.net/hr?retryWrites=true&w=majority
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
-
+# The format used for the keystore. It could be set to JKS in case it is a JKS file
+server:
+  port:  9090
+  ssl:
+    enabled: true
+    key-store-type: PKCS12
+  # The path to the keystore containing the certificate
+    key-store: classpath:keystore/stakeout.p12
+  # The password used to generate the certificate
+    key-store-password: hrstakeout
+  # The alias mapped to the certificate
+    key-alias: hr
