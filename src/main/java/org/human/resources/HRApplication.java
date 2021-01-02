@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 
 @SpringBootApplication
-@ComponentScan("org.human")
+@ComponentScan(basePackages ="org.human.resources")
 public class HRApplication {
 
 	public static void main(String[] args) {
