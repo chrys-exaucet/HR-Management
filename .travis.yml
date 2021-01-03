@@ -4,19 +4,52 @@ jdk:
   - openjdk11
   - openjdk15
 
+
+services:
+  - docker
+
+env:
+  global:
+    - DOCKER_COMPOSE_VERSION=1.8.0
+
+cache:
+  directories:
+    - $HOME/.m2/repository
+
+before_install:
+  - sudo apt-get update
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - docker version
+  - docker-compose version
+
 install:
   - mvn -N io.takari:maven:wrapper
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+before_script:
+  - docker-compose up -d --build
+
+script:
+  - docker-compose run test
+
+after_script:
+  - docker-compose down
 
 branches:
   only:
     - dev
 
-deploy:
-  provider: heroku
-  api_key:
-    secure: $HEROKU_API_KEY
-  app: hr-stakeout
-  on:
-    branch: master
+jobs:
+  include:
+    - stage: deploy
+      deploy:
+        provider: heroku
+        api_key:
+          secure: $HEROKU_API_KEY
+        app: hr-stakeout
+        on:
+          branch: master
 
