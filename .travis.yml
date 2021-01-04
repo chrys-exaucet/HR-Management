@@ -36,6 +36,7 @@ script:
 branches:
   only:
     - dev
+    - master
 
 jobs:
   include:
