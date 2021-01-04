@@ -1,0 +1,41 @@
+version: '3.3'
+
+networks:
+  hrnet:
+    driver: bridge
+  backendnet:
+    driver: bridge
+
+volumes:
+  hr_service_db: { }
+
+services:
+
+    hr-service-db:
+      container_name: hr_service_db
+      image: mongo
+      environment:
+        - MONGO_INIT_DATABASE=hr-db
+        - MONGO_INIT_DB_ROOT_USERNAME=chrys
+        - MONGO_INIT_DB_ROOT_PASSWORD=aBcDzY
+      ports:
+        - 27017:27017
+      restart: always
+      networks:
+        - hrnet
+
+    hr-service:
+      container_name: hr_service
+      build: .
+      env_file:
+        - .env
+      ports:
+        - 9090:8080
+      links:
+        - "hr-service-db:hr-db"
+      networks:
+        - hrnet
+        - backendnet
+      depends_on:
+        - hr-service-db
+
