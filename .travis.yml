@@ -28,14 +28,10 @@ install:
   - mvn -N io.takari:maven:wrapper
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
-before_script:
+script:
   - docker-compose up -d --build
 
-script:
-  - docker-compose run test
 
-after_script:
-  - docker-compose down
 
 branches:
   only:
