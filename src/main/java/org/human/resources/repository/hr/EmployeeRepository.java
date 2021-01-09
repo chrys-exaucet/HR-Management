@@ -1,6 +1,6 @@
 package org.human.resources.repository;
 
-import org.human.resources.model.Employee;
+import org.human.resources.model.employee.Employee;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

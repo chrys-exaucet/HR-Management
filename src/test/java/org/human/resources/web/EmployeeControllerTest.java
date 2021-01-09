@@ -2,7 +2,7 @@ package org.human.resources.controller;
 
 import org.human.resources.dto.EmployeeDto;
 import org.human.resources.mapper.EmployeeMapper;
-import org.human.resources.model.Employee;
+import org.human.resources.model.employee.Employee;
 import org.human.resources.service.EmployeeService;
 import org.jeasy.random.EasyRandom;
 import org.junit.jupiter.api.Test;
