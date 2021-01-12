@@ -1,11 +1,10 @@
-package org.human.resources.model.location;
+package org.human.resources.domain.hr.location;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -21,7 +20,7 @@ import java.util.Set;
 public class Department {
 
     @Id
-    private ObjectId id;
+    private String id;
 
     @Indexed
     private String name;
@@ -29,6 +28,6 @@ public class Department {
     private Set<String> employeesIds;
 
     @DBRef(db = "location")
-    private ObjectId locationId;
+    private String locationId;
 
 }

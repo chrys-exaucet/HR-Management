@@ -1,4 +1,4 @@
-package org.human.resources.controller;
+package org.human.resources.web;
 
 import org.human.resources.dto.EmployeeDto;
 import org.human.resources.mapper.EmployeeMapper;

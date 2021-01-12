@@ -1,10 +1,9 @@
-package org.human.resources.model.job;
+package org.human.resources.domain.hr.job;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.ObjectId;
 
 import java.util.Set;
 
@@ -14,10 +13,11 @@ import java.util.Set;
 @Builder
 public class Job {
 
-    private ObjectId id;
+    private String id;
     private String title;
     private long minSalary;
     private long maxSalary;
-    private Set<ObjectId> employeeId;
+    private Set<String> employeeId;
     private Set<Task> tasks;
+
 }

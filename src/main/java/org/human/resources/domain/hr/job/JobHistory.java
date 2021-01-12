@@ -1,10 +1,9 @@
-package org.human.resources.model.job;
+package org.human.resources.domain.hr.job;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -21,19 +20,19 @@ import java.time.ZonedDateTime;
 public class JobHistory {
 
     @Id
-    private ObjectId id;
+    private String id;
 
     @Indexed
-    private ObjectId employeeId;
+    private String employeeId;
 
     private ZonedDateTime startDate;
 
     private ZonedDateTime endDate;
 
     @DBRef(db = "department")
-    private ObjectId departmentId;
+    private String departmentId;
 
-    private ObjectId jobId;
+    private String jobId;
 
 
 }

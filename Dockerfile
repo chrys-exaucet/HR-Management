@@ -14,4 +14,6 @@ WORKDIR ${APP_ROOT}
 COPY ${JAR_FILE} ${APP_ROOT}/app.jar
 
 USER hr-manager:hr
-ENTRYPOINT ["java","-jar","app.jar"]
+
+ENTRYPOINT ["java"]
+CMD ["java","-jar","app.jar"]

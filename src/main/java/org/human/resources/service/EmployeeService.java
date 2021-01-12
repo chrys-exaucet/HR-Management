@@ -1,8 +1,8 @@
 package org.human.resources.service;
 
 
-import org.human.resources.model.Employee;
-import org.human.resources.repository.EmployeeRepository;
+import org.human.resources.domain.hr.employee.Employee;
+import org.human.resources.repository.hr.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

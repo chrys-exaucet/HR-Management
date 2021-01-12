@@ -11,31 +11,27 @@ volumes:
 
 services:
 
-    hr-service-db:
-      container_name: hr_service_db
-      image: mongo
-      environment:
-        - MONGO_INIT_DATABASE=hr-db
-        - MONGO_INIT_DB_ROOT_USERNAME=chrys
-        - MONGO_INIT_DB_ROOT_PASSWORD=aBcDzY
-      ports:
-        - 27017:27017
-      restart: always
-      networks:
-        - hrnet
+  hr-service-db:
+    container_name: hr_service_db
+    image: library/mongo:3.6.16-xenial
+    env_file:
+      - env/db.env
+    ports:
+      - 27017:27017
+    restart: always
+    networks:
+      - hrnet
 
-    hr-service:
-      container_name: hr_service
-      build: .
-      env_file:
-        - .env
-      ports:
-        - 9090:8080
-      links:
-        - "hr-service-db:hr-db"
-      networks:
-        - hrnet
-        - backendnet
-      depends_on:
-        - hr-service-db
+  hr-service:
+    container_name: hr_service
+    build: Dockerfile
+    env_file:
+      - env/hr.env
+    ports:
+      - 9090:9090
+    networks:
+      - hrnet
+      - backendnet
+    depends_on:
+      - hr-service-db
 

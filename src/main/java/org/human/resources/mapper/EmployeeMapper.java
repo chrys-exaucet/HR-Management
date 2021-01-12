@@ -1,7 +1,7 @@
 package org.human.resources.mapper;
 
 import org.human.resources.dto.EmployeeDto;
-import org.human.resources.model.Employee;
+import org.human.resources.domain.hr.employee.Employee;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

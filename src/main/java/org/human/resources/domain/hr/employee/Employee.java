@@ -1,19 +1,17 @@
-package org.human.resources.model.employee;
+package org.human.resources.domain.hr.employee;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
 
 
 @Document(collection = "employee")
@@ -21,17 +19,16 @@ import java.time.ZonedDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee {
+public class Employee implements Serializable {
+
 
     @Id
-    private ObjectId id;
+    private String id;
 
     @NotNull
-    @Size(min = 12, message = "Enter at least 12 characters for the first name.")
     private String firstName;
 
     @NotNull
-    @Size(min = 12, message = "Enter at least 12 characters for the last name.")
     private String lastName;
 
     @Email
@@ -40,16 +37,19 @@ public class Employee {
 
     private String phoneNumber;
 
-    private ZonedDateTime hireDate;
+    private LocalDateTime hireDate;
 
+    @Positive
     private long salary;
 
+    @Positive
+    @Max(100)
     private BigDecimal commissionPercentage;
 
     @DBRef(db = "employee")
-    private ObjectId managerId;
+    private String managerId;
 
     @DBRef(db = "department")
-    private ObjectId departmentId;
+    private String departmentId;
 
 }

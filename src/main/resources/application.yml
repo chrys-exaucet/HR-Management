@@ -3,10 +3,7 @@ spring:
     allow-bean-definition-overriding: true
   data:
     mongodb:
-      username: chrys
-      host: localhost
-      port: 27027
-      database: hr-db
+      uri: mongodb://chrys:aBcDzY@localhost:27017/hr
   autoconfigure:
     exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 

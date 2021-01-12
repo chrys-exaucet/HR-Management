@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hr-app
+  labels:
+    app: hr-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hr-app
+  template:
+    metadata:
+      labels:
+        app: hr-app
+    spec:
+      containers:
+        - name: hr-app
+          image: ../../.. # Change this to a registry
+          ports:
+            - containerPort: 9090
+          env:
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: hr-db-secret
+                  key: hr.db.username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: hr-db-secret
+                  key: hr.db.password
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: hr-db-configMap
+                  key: database.url
+            - name: SPRING_PROFILE
+              value: "default"
+            - name: JAVA_OPTS
+              value: "-Xmx256m -Xms128m"
+
+
+
