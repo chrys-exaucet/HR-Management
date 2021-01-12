@@ -1,4 +1,8 @@
+
+[![Build Status](https://travis-ci.com/chrys-exaucet/hr-stakeout.svg?branch=dev)](https://travis-ci.com/chrys-exaucet/hr-stakeout) 
+
 # HR Stakeout
+
 
 Human resources management system based on
 the [ public oracle database schema](https://docs.oracle.com/en/database/oracle/oracle-database/21/comsc/schema-diagrams.html#GUID-01BFEF14-C6BD-42CD-8558-DDD214DB3AE0)
